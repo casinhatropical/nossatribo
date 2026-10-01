@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Tribo - Sagrada Medicina</title>
     
+    <!-- Ícone da Aba do Navegador (Favicon) usando a logo -->
+    <link rel="icon" href="./imagens/logo.png" type="image/png">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -25,17 +28,17 @@
                     },
                     colors: {
                         earth: {
-                            900: '#1c1614', /* Very dark brown/black */
-                            800: '#2c221e', /* Dark brown */
-                            700: '#3a2e28', /* Medium dark brown */
-                            600: '#5c483a', /* Medium brown */
-                            500: '#8c6b52', /* Light brown / terracotta */
-                            400: '#b89270', /* Sand */
-                            100: '#f5efe6', /* Off-white / cream */
+                            900: '#1c1614',
+                            800: '#2c221e',
+                            700: '#3a2e28',
+                            600: '#5c483a',
+                            500: '#8c6b52',
+                            400: '#b89270',
+                            100: '#f5efe6',
                         },
                         mystic: {
-                            gold: '#d97706', /* Amber 600 */
-                            light: '#fbbf24', /* Amber 400 */
+                            gold: '#d97706',
+                            light: '#fbbf24',
                         }
                     }
                 }
@@ -59,6 +62,11 @@
         .leaf-pattern {
             background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M54.627 0l.83.83-26.98 26.98-2.618-2.617L52.84.212l1.787-.212zM28.02 33.254l-2.618-2.617 26.98-26.98.83.83-25.192 28.767zM31.98 26.746l2.618 2.617-26.98 26.98-.83-.83 25.192-28.767zM5.373 60l-.83-.83 26.98-26.98 2.618 2.617L7.16 59.788l-1.787.212z" fill="%233a2e28" fill-opacity="0.1" fill-rule="evenodd"/></svg>');
         }
+        /* Active Language Style */
+        .lang-btn.active {
+            color: #fbbf24;
+            border-bottom: 2px solid #d97706;
+        }
     </style>
 </head>
 <body class="antialiased font-sans text-earth-100 selection:bg-mystic-gold selection:text-earth-900">
@@ -66,30 +74,63 @@
     <!-- Navbar -->
     <header class="fixed w-full z-50 bg-earth-900 bg-opacity-90 backdrop-blur-md border-b border-earth-700 transition-all duration-300 shadow-lg">
         <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
-            <!-- Logo Section - CORRIGIDO PARA .png -->
+            <!-- Logo Section -->
             <a href="#" class="flex items-center gap-4 group">
                 <div class="w-14 h-14 rounded-full bg-earth-800 flex items-center justify-center p-1 border border-earth-600 group-hover:border-mystic-gold transition-colors overflow-hidden glowing-border">
                     <img src="./imagens/logo.png" alt="Logo Nossa Tribo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/150x150/2c221e/d97706?text=Tribo'">
                 </div>
                 <div>
                     <h1 class="font-serif text-2xl lg:text-3xl text-mystic-gold font-bold tracking-wider group-hover:text-mystic-light transition-colors">Nossa Tribo</h1>
-                    <p class="text-xs text-earth-400 tracking-[0.2em] uppercase">Centro Xamânico</p>
+                    <p class="text-xs text-earth-400 tracking-[0.2em] uppercase">
+                        <span class="lang-pt">Centro Xamânico</span>
+                        <span class="lang-en hidden">Shamanic Center</span>
+                        <span class="lang-es hidden">Centro Chamánico</span>
+                    </p>
                 </div>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex gap-8 items-center font-medium text-sm tracking-wide">
-                <a href="#egregora" class="hover:text-mystic-gold transition-colors">A Egrégora</a>
-                <a href="#ayahuasca" class="hover:text-mystic-gold transition-colors">A Medicina</a>
-                <a href="#preparos" class="hover:text-mystic-gold transition-colors">Preparos</a>
-                <a href="#depoimentos" class="hover:text-mystic-gold transition-colors">Depoimentos</a>
-                <a href="#contato" class="px-6 py-2 bg-mystic-gold text-earth-900 rounded-full hover:bg-mystic-light transition-colors font-bold shadow-lg shadow-mystic-gold/20">Contato</a>
+            <nav class="hidden md:flex gap-6 lg:gap-8 items-center font-medium text-sm tracking-wide">
+                <a href="#egregora" class="hover:text-mystic-gold transition-colors">
+                    <span class="lang-pt">A Egrégora</span><span class="lang-en hidden">The Egregore</span><span class="lang-es hidden">La Egrégora</span>
+                </a>
+                <a href="#ayahuasca" class="hover:text-mystic-gold transition-colors">
+                    <span class="lang-pt">A Medicina</span><span class="lang-en hidden">The Medicine</span><span class="lang-es hidden">La Medicina</span>
+                </a>
+                <a href="#preparos" class="hover:text-mystic-gold transition-colors">
+                    <span class="lang-pt">Preparos</span><span class="lang-en hidden">Preparation</span><span class="lang-es hidden">Preparación</span>
+                </a>
+                <a href="#programacao" class="hover:text-mystic-gold transition-colors">
+                    <span class="lang-pt">Programação</span><span class="lang-en hidden">Schedule</span><span class="lang-es hidden">Programación</span>
+                </a>
+                <a href="#depoimentos" class="hover:text-mystic-gold transition-colors">
+                    <span class="lang-pt">Depoimentos</span><span class="lang-en hidden">Testimonials</span><span class="lang-es hidden">Testimonios</span>
+                </a>
+                <a href="#contato" class="px-6 py-2 bg-mystic-gold text-earth-900 rounded-full hover:bg-mystic-light transition-colors font-bold shadow-lg shadow-mystic-gold/20">
+                    <span class="lang-pt">Contato</span><span class="lang-en hidden">Contact</span><span class="lang-es hidden">Contacto</span>
+                </a>
+
+                <!-- Language Selector Desktop -->
+                <div class="flex items-center gap-3 border-l border-earth-700 pl-6">
+                    <button onclick="setLanguage('pt')" id="btn-pt-desk" class="lang-btn active text-earth-400 hover:text-mystic-gold font-bold transition-colors pb-1">PT</button>
+                    <button onclick="setLanguage('en')" id="btn-en-desk" class="lang-btn text-earth-400 hover:text-mystic-gold font-bold transition-colors pb-1">EN</button>
+                    <button onclick="setLanguage('es')" id="btn-es-desk" class="lang-btn text-earth-400 hover:text-mystic-gold font-bold transition-colors pb-1">ES</button>
+                </div>
             </nav>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-earth-100 hover:text-mystic-gold transition-colors">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <!-- Mobile Menu Actions -->
+            <div class="flex items-center gap-4 md:hidden">
+                <!-- Language Selector Mobile -->
+                <div class="flex items-center gap-2">
+                    <button onclick="setLanguage('pt')" id="btn-pt-mob" class="lang-btn active text-earth-400 hover:text-mystic-gold font-bold text-sm">PT</button>
+                    <button onclick="setLanguage('en')" id="btn-en-mob" class="lang-btn text-earth-400 hover:text-mystic-gold font-bold text-sm">EN</button>
+                    <button onclick="setLanguage('es')" id="btn-es-mob" class="lang-btn text-earth-400 hover:text-mystic-gold font-bold text-sm">ES</button>
+                </div>
+                <!-- Menu Button -->
+                <button class="text-2xl text-earth-100 hover:text-mystic-gold transition-colors">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -104,17 +145,21 @@
         <div class="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
             <i class="fa-brands fa-pagelines text-5xl text-mystic-gold mb-6 animate-pulse"></i>
             <h2 class="font-serif text-4xl lg:text-6xl font-bold text-earth-100 mb-6 leading-tight max-w-4xl shadow-black drop-shadow-lg">
-                Desperte sua Consciência e Encontre sua <span class="text-mystic-gold">Cura Interior</span>
+                <span class="lang-pt">Desperte sua Consciência e Encontre sua <span class="text-mystic-gold">Cura Interior</span></span>
+                <span class="lang-en hidden">Awaken your Consciousness and Find your <span class="text-mystic-gold">Inner Healing</span></span>
+                <span class="lang-es hidden">Despierta tu Conciencia y Encuentra tu <span class="text-mystic-gold">Sanación Interior</span></span>
             </h2>
             <p class="text-lg lg:text-xl text-earth-400 mb-10 max-w-2xl font-light leading-relaxed">
-                Venha vivenciar a sagrada medicina da floresta em um ambiente de luz, respeito, acolhimento e muito amor. Sinta o chamado.
+                <span class="lang-pt">Venha vivenciar a sagrada medicina da floresta em um ambiente de luz, respeito, acolhimento e muito amor. Sinta o chamado.</span>
+                <span class="lang-en hidden">Come experience the sacred medicine of the forest in an environment of light, respect, acceptance, and much love. Feel the call.</span>
+                <span class="lang-es hidden">Ven a experimentar la sagrada medicina del bosque en un ambiente de luz, respeto, acogida y mucho amor. Siente la llamada.</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#preparos" class="px-8 py-4 bg-mystic-gold text-earth-900 rounded-full font-bold hover:bg-mystic-light transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(217,119,6,0.4)]">
-                    Como se Preparar
+                    <span class="lang-pt">Como se Preparar</span><span class="lang-en hidden">How to Prepare</span><span class="lang-es hidden">Cómo Prepararse</span>
                 </a>
                 <a href="#contato" class="px-8 py-4 bg-transparent border-2 border-earth-600 text-earth-100 rounded-full font-bold hover:border-mystic-gold hover:text-mystic-gold transition-all">
-                    Agendar Cerimônia
+                    <span class="lang-pt">Agendar Cerimônia</span><span class="lang-en hidden">Schedule Ceremony</span><span class="lang-es hidden">Agendar Ceremonia</span>
                 </a>
             </div>
         </div>
@@ -126,7 +171,6 @@
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 <div class="lg:w-1/2">
                     <div class="relative glowing-border rounded-2xl p-2 bg-earth-700">
-                        <!-- Imagem da Egrégora com path original -->
                         <img src="./imagens/egregora-1.jpeg" alt="Nossa Egrégora" class="w-full h-auto rounded-xl object-cover shadow-2xl" onerror="this.src='https://placehold.co/800x600/3a2e28/d97706?text=Foto+da+Egr%C3%A9gora'">
                         <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-mystic-gold rounded-full flex items-center justify-center shadow-lg border-4 border-earth-800 hidden md:flex">
                             <i class="fa-solid fa-hands-holding-circle text-4xl text-earth-900"></i>
@@ -135,27 +179,41 @@
                 </div>
                 <div class="lg:w-1/2 text-left">
                     <div class="inline-block px-3 py-1 bg-earth-700 text-mystic-gold text-xs font-bold tracking-widest uppercase rounded-full mb-4">
-                        Nossa Família
+                        <span class="lang-pt">Nossa Família</span><span class="lang-en hidden">Our Family</span><span class="lang-es hidden">Nuestra Familia</span>
                     </div>
-                    <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-6 text-earth-100">Uma Egrégora de Luz e Acolhimento</h3>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-6 text-earth-100">
+                        <span class="lang-pt">Uma Egrégora de Luz e Acolhimento</span>
+                        <span class="lang-en hidden">An Egregore of Light and Welcoming</span>
+                        <span class="lang-es hidden">Una Egrégora de Luz y Acogida</span>
+                    </h3>
                     <p class="text-earth-400 mb-6 text-lg leading-relaxed">
-                        A <strong class="text-mystic-light font-normal">Nossa Tribo</strong> nasceu do chamado ancestral para ancorar a luz e o amor através das medicinas da floresta. Somos uma família espiritual dedicada ao despertar da consciência, cura emocional e evolução do ser.
+                        <span class="lang-pt">A <strong class="text-mystic-light font-normal">Nossa Tribo</strong> nasceu do chamado ancestral para ancorar a luz e o amor através das medicinas da floresta. Somos uma família espiritual dedicada ao despertar da consciência, cura emocional e evolução do ser.</span>
+                        <span class="lang-en hidden">The <strong class="text-mystic-light font-normal">Nossa Tribo</strong> was born from the ancestral call to anchor light and love through forest medicines. We are a spiritual family dedicated to the awakening of consciousness, emotional healing, and evolution of the being.</span>
+                        <span class="lang-es hidden">La <strong class="text-mystic-light font-normal">Nossa Tribo</strong> nació del llamado ancestral para anclar la luz y el amor a través de las medicinas del bosque. Somos una familia espiritual dedicada al despertar de la conciencia, la sanación emocional y la evolución del ser.</span>
                     </p>
                     <p class="text-earth-400 mb-8 text-lg leading-relaxed">
-                        Nossas cerimônias são conduzidas com extrema responsabilidade, respeito às tradições xamânicas e profundo cuidado com cada participante, garantindo um espaço seguro para sua jornada interior.
+                        <span class="lang-pt">Nossas cerimônias são conduzidas com extrema responsabilidade, respeito às tradições xamânicas e profundo cuidado com cada participante, garantindo um espaço seguro para sua jornada interior.</span>
+                        <span class="lang-en hidden">Our ceremonies are conducted with extreme responsibility, respect for shamanic traditions, and deep care for each participant, ensuring a safe space for your inner journey.</span>
+                        <span class="lang-es hidden">Nuestras ceremonias se llevan a cabo con extrema responsabilidad, respeto por las tradiciones chamánicas y profundo cuidado por cada participante, garantizando un espacio seguro para su viaje interior.</span>
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-4">
                             <i class="fa-solid fa-check text-mystic-gold mt-1"></i>
-                            <span class="text-earth-100">Espaço seguro e guardiões experientes.</span>
+                            <span class="text-earth-100 lang-pt">Espaço seguro e guardiões experientes.</span>
+                            <span class="text-earth-100 lang-en hidden">Safe space and experienced guardians.</span>
+                            <span class="text-earth-100 lang-es hidden">Espacio seguro y guardianes experimentados.</span>
                         </li>
                         <li class="flex items-start gap-4">
                             <i class="fa-solid fa-check text-mystic-gold mt-1"></i>
-                            <span class="text-earth-100">Cânticos, rezas e instrumentos de cura (Ícaros e Músicas de Rezo).</span>
+                            <span class="text-earth-100 lang-pt">Cânticos, rezas e instrumentos de cura (Ícaros e Músicas de Rezo).</span>
+                            <span class="text-earth-100 lang-en hidden">Chants, prayers, and healing instruments (Icaros and Prayer Songs).</span>
+                            <span class="text-earth-100 lang-es hidden">Cánticos, rezos e instrumentos de sanación (Ícaros y Canciones de Rezo).</span>
                         </li>
                         <li class="flex items-start gap-4">
                             <i class="fa-solid fa-check text-mystic-gold mt-1"></i>
-                            <span class="text-earth-100">Acompanhamento e integração pós-cerimônia.</span>
+                            <span class="text-earth-100 lang-pt">Acompanhamento e integração pós-cerimônia.</span>
+                            <span class="text-earth-100 lang-en hidden">Post-ceremony follow-up and integration.</span>
+                            <span class="text-earth-100 lang-es hidden">Seguimiento e integración post-ceremonia.</span>
                         </li>
                     </ul>
                 </div>
@@ -169,25 +227,32 @@
             <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
                 <div class="lg:w-1/2">
                     <div class="relative glowing-border rounded-2xl p-2 bg-earth-800">
-                        <!-- Imagem da Cerimônia com path original -->
                         <img src="./imagens/cerimonia-1.jpeg" alt="Cerimônia de Ayahuasca" class="w-full h-auto rounded-xl object-cover shadow-2xl" onerror="this.src='https://placehold.co/800x600/2c221e/d97706?text=Foto+da+Cerim%C3%B4nia'">
                     </div>
                 </div>
                 <div class="lg:w-1/2 text-left">
                     <div class="inline-block px-3 py-1 bg-earth-800 text-mystic-gold text-xs font-bold tracking-widest uppercase rounded-full mb-4">
-                        A Medicina Sagrada
+                        <span class="lang-pt">A Medicina Sagrada</span><span class="lang-en hidden">The Sacred Medicine</span><span class="lang-es hidden">La Medicina Sagrada</span>
                     </div>
-                    <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-6 text-earth-100">A Força da Ayahuasca</h3>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-6 text-earth-100">
+                        <span class="lang-pt">A Força da Ayahuasca</span><span class="lang-en hidden">The Power of Ayahuasca</span><span class="lang-es hidden">La Fuerza de la Ayahuasca</span>
+                    </h3>
                     <p class="text-earth-400 mb-6 text-lg leading-relaxed">
-                        A Ayahuasca (também conhecida como Nixi Pae, Daime ou Vegetal) é um chá sacramental de origem amazônica, feito da união do cipó Mariri (Jagube) e das folhas da Chacrona (Rainha).
+                        <span class="lang-pt">A Ayahuasca (também conhecida como Nixi Pae, Daime ou Vegetal) é um chá sacramental de origem amazônica, feito da união do cipó Mariri (Jagube) e das folhas da Chacrona (Rainha).</span>
+                        <span class="lang-en hidden">Ayahuasca (also known as Nixi Pae, Daime, or Vegetal) is a sacramental tea of Amazonian origin, made from the union of the Mariri vine (Jagube) and Chacrona leaves (Rainha).</span>
+                        <span class="lang-es hidden">La Ayahuasca (también conocida como Nixi Pae, Daime o Vegetal) es un té sacramental de origen amazónico, hecho de la unión de la liana Mariri (Jagube) y las hojas de Chacrona (Rainha).</span>
                     </p>
                     <p class="text-earth-400 mb-6 text-lg leading-relaxed">
-                        Considerada uma "medicina da alma", ela atua como um expansor de consciência, permitindo acessar memórias profundas, ressignificar traumas, curar feridas emocionais e proporcionar um encontro verdadeiro com sua essência divina.
+                        <span class="lang-pt">Considerada uma "medicina da alma", ela atua como um expansor de consciência, permitindo acessar memórias profundas, ressignificar traumas, curar feridas emocionais e proporcionar um encontro verdadeiro com sua essência divina.</span>
+                        <span class="lang-en hidden">Considered a "medicine of the soul", it acts as a consciousness expander, allowing access to deep memories, reframing traumas, healing emotional wounds, and providing a true encounter with your divine essence.</span>
+                        <span class="lang-es hidden">Considerada una "medicina del alma", actúa como un expansor de la conciencia, permitiendo acceder a recuerdos profundos, resignificar traumas, sanar heridas emocionales y proporcionar un verdadero encuentro con tu esencia divina.</span>
                     </p>
                     <div class="bg-earth-800 p-6 rounded-xl border-l-4 border-mystic-gold">
                         <i class="fa-solid fa-quote-left text-2xl text-earth-600 mb-2"></i>
                         <p class="italic text-earth-100 text-sm">
-                            "A medicina não te mostra o que você quer ver, ela te mostra o que você precisa curar para ser livre."
+                            <span class="lang-pt">"A medicina não te mostra o que você quer ver, ela te mostra o que você precisa curar para ser livre."</span>
+                            <span class="lang-en hidden">"The medicine doesn't show you what you want to see, it shows you what you need to heal to be free."</span>
+                            <span class="lang-es hidden">"La medicina no te muestra lo que quieres ver, te muestra lo que necesitas sanar para ser libre."</span>
                         </p>
                     </div>
                 </div>
@@ -198,62 +263,196 @@
     <!-- Preparos / Dieta Section -->
     <section id="preparos" class="py-20 lg:py-28 bg-earth-800 leaf-pattern">
         <div class="container mx-auto px-4 text-center">
-            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-4 text-earth-100">Preparos para a Cerimônia</h3>
+            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-4 text-earth-100">
+                <span class="lang-pt">Preparos para a Cerimônia</span><span class="lang-en hidden">Preparation for the Ceremony</span><span class="lang-es hidden">Preparativos para la Ceremonia</span>
+            </h3>
             <p class="text-earth-400 max-w-2xl mx-auto mb-16 text-lg">
-                Para receber a medicina com reverência e facilitar o processo de limpeza (física e espiritual), pedimos que realize a dieta nos <strong class="text-mystic-gold">3 dias que antecedem</strong> o ritual.
+                <span class="lang-pt">Para receber a medicina com reverência e facilitar o processo de limpeza (física e espiritual), pedimos que realize a dieta nos <strong class="text-mystic-gold">3 dias que antecedem</strong> o ritual.</span>
+                <span class="lang-en hidden">To receive the medicine with reverence and facilitate the cleansing process (physical and spiritual), we ask that you follow the diet for the <strong class="text-mystic-gold">3 days preceding</strong> the ritual.</span>
+                <span class="lang-es hidden">Para recibir la medicina con reverencia y facilitar el proceso de limpieza (física y espiritual), pedimos que realice la dieta en los <strong class="text-mystic-gold">3 días previos</strong> al ritual.</span>
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="bg-earth-900 p-8 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors glowing-border group">
                     <div class="w-16 h-16 bg-earth-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-mystic-gold transition-colors">
                         <i class="fa-solid fa-drumstick-bite text-2xl text-mystic-gold group-hover:text-earth-900 transition-colors"></i>
                     </div>
-                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">Alimentação</h4>
+                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">
+                        <span class="lang-pt">Alimentação</span><span class="lang-en hidden">Diet</span><span class="lang-es hidden">Alimentación</span>
+                    </h4>
                     <p class="text-earth-400 text-sm">
-                        Evite carne vermelha e de porco. Dê preferência a alimentos leves, frutas, legumes, grãos e muita água. Evite excesso de sal, açúcar, frituras e temperos fortes.
+                        <span class="lang-pt">Evite carne vermelha e de porco. Dê preferência a alimentos leves, frutas, legumes, grãos e muita água. Evite excesso de sal, açúcar, frituras e temperos fortes.</span>
+                        <span class="lang-en hidden">Avoid red and pork meat. Prefer light foods, fruits, vegetables, grains, and plenty of water. Avoid excess salt, sugar, fried, and spicy foods.</span>
+                        <span class="lang-es hidden">Evite la carne roja y de cerdo. Prefiera alimentos ligeros, frutas, verduras, granos y mucha agua. Evite el exceso de sal, azúcar, frituras y condimentos fuertes.</span>
                     </p>
                 </div>
-                <!-- Card 2 -->
                 <div class="bg-earth-900 p-8 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors glowing-border group">
                     <div class="w-16 h-16 bg-earth-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-mystic-gold transition-colors">
                         <i class="fa-solid fa-wine-glass-empty text-2xl text-mystic-gold group-hover:text-earth-900 transition-colors"></i>
                     </div>
-                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">Substâncias</h4>
+                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">
+                        <span class="lang-pt">Substâncias</span><span class="lang-en hidden">Substances</span><span class="lang-es hidden">Sustancias</span>
+                    </h4>
                     <p class="text-earth-400 text-sm">
-                        É rigorosamente proibido o uso de bebidas alcoólicas, drogas ilícitas (maconha, cocaína, sintéticos, etc.) e medicações contra-indicadas.
+                        <span class="lang-pt">É rigorosamente proibido o uso de bebidas alcoólicas, drogas ilícitas (maconha, cocaína, sintéticos, etc.) e medicações contra-indicadas.</span>
+                        <span class="lang-en hidden">It is strictly forbidden to use alcoholic beverages, illicit drugs (marijuana, cocaine, synthetics, etc.), and contraindicated medications.</span>
+                        <span class="lang-es hidden">Está estrictamente prohibido el uso de bebidas alcohólicas, drogas ilícitas (marihuana, cocaína, sintéticos, etc.) y medicamentos contraindicados.</span>
                     </p>
                 </div>
-                <!-- Card 3 -->
                 <div class="bg-earth-900 p-8 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors glowing-border group">
                     <div class="w-16 h-16 bg-earth-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-mystic-gold transition-colors">
                         <i class="fa-solid fa-bed text-2xl text-mystic-gold group-hover:text-earth-900 transition-colors"></i>
                     </div>
-                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">Energia e Corpo</h4>
+                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">
+                        <span class="lang-pt">Energia e Corpo</span><span class="lang-en hidden">Energy and Body</span><span class="lang-es hidden">Energía y Cuerpo</span>
+                    </h4>
                     <p class="text-earth-400 text-sm">
-                        Mantenha abstinência sexual (incluindo masturbação) para preservar sua energia vital. Busque repousar a mente, evite discussões e conteúdos pesados na TV/internet.
+                        <span class="lang-pt">Mantenha abstinência sexual (incluindo masturbação) para preservar sua energia vital. Busque repousar a mente, evite discussões e conteúdos pesados na TV/internet.</span>
+                        <span class="lang-en hidden">Maintain sexual abstinence (including masturbation) to preserve your vital energy. Seek to rest the mind, avoid arguments and heavy content on TV/internet.</span>
+                        <span class="lang-es hidden">Mantenga abstinencia sexual (incluida la masturbación) para preservar su energía vital. Busque descansar la mente, evite discusiones y contenido pesado en TV/internet.</span>
                     </p>
                 </div>
             </div>
             
             <div class="mt-12 inline-block bg-mystic-gold/10 text-mystic-light border border-mystic-gold/30 px-6 py-3 rounded-lg text-sm">
-                <i class="fa-solid fa-circle-exclamation mr-2"></i> <strong>Atenção:</strong> Pessoas que fazem uso de antidepressivos (inibidores de MAO ou recaptação de serotonina) ou têm histórico de transtornos psiquiátricos severos devem nos informar <strong>obrigatoriamente</strong> antes.
+                <i class="fa-solid fa-circle-exclamation mr-2"></i> 
+                <span class="lang-pt"><strong>Atenção:</strong> Pessoas que fazem uso de antidepressivos (inibidores de MAO ou recaptação de serotonina) ou têm histórico de transtornos psiquiátricos severos devem nos informar <strong>obrigatoriamente</strong> antes.</span>
+                <span class="lang-en hidden"><strong>Attention:</strong> People using antidepressants (MAO inhibitors or serotonin reuptake inhibitors) or with a history of severe psychiatric disorders must <strong>strictly</strong> inform us beforehand.</span>
+                <span class="lang-es hidden"><strong>Atención:</strong> Las personas que usan antidepresivos (inhibidores de la MAO o inhibidores de la recaptación de serotonina) o tienen antecedentes de trastornos psiquiátricos graves deben informarnos <strong>obligatoriamente</strong> antes.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programação Section (Calendário 2026) -->
+    <section id="programacao" class="py-20 lg:py-28 bg-earth-900 relative border-t border-earth-700">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-block px-3 py-1 bg-earth-800 text-mystic-gold text-xs font-bold tracking-widest uppercase rounded-full mb-4">
+                <span class="lang-pt">Calendário 2026</span>
+                <span class="lang-en hidden">2026 Calendar</span>
+                <span class="lang-es hidden">Calendario 2026</span>
+            </div>
+            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-16 text-earth-100">
+                <span class="lang-pt">Próximas Cerimônias com a Sagrada Ayahuasca</span>
+                <span class="lang-en hidden">Upcoming Ceremonies with Sacred Ayahuasca</span>
+                <span class="lang-es hidden">Próximas Ceremonias con la Sagrada Ayahuasca</span>
+            </h3>
+
+            <!-- Grid de Datas Baseado na Imagem Anexada -->
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                
+                <!-- Evento 1 -->
+                <div class="bg-earth-800 p-6 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors flex items-center gap-6 glowing-border">
+                    <div class="text-center min-w-[90px]">
+                        <span class="block text-4xl font-bold text-mystic-gold">3</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-pt">Outubro</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-en hidden">October</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-es hidden">Octubre</span>
+                    </div>
+                    <div class="h-12 w-px bg-earth-600"></div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-earth-100 lang-pt">Legião de São Miguel Arcanjo</h4>
+                        <h4 class="font-serif text-xl font-bold text-earth-100 lang-en hidden">Legion of St. Michael Archangel</h4>
+                        <h4 class="font-serif text-xl font-bold text-earth-100 lang-es hidden">Legión de San Miguel Arcángel</h4>
+                    </div>
+                </div>
+
+                <!-- Evento 2 -->
+                <div class="bg-earth-800 p-6 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors flex items-center gap-6 glowing-border">
+                    <div class="text-center min-w-[90px]">
+                        <span class="block text-4xl font-bold text-mystic-gold">24</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-pt">Outubro</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-en hidden">October</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-es hidden">Octubre</span>
+                    </div>
+                    <div class="h-12 w-px bg-earth-600"></div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-[#b784e6] lang-pt">Roda de Cura Chama Violeta</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#b784e6] lang-en hidden">Violet Flame Healing Circle</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#b784e6] lang-es hidden">Círculo de Sanación Llama Violeta</h4>
+                    </div>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="bg-earth-800 p-6 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors flex items-center gap-6 glowing-border">
+                    <div class="text-center min-w-[90px]">
+                        <span class="block text-4xl font-bold text-mystic-gold">14</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-pt">Novembro</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-en hidden">November</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-es hidden">Noviembre</span>
+                    </div>
+                    <div class="h-12 w-px bg-earth-600"></div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-[#10b981] lang-pt">Caminhos da África</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#10b981] lang-en hidden">Paths of Africa</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#10b981] lang-es hidden">Caminos de África</h4>
+                    </div>
+                </div>
+
+                <!-- Evento 4 -->
+                <div class="bg-earth-800 p-6 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors flex items-center gap-6 glowing-border">
+                    <div class="text-center min-w-[90px]">
+                        <span class="block text-4xl font-bold text-mystic-gold">28</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-pt">Novembro</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-en hidden">November</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-es hidden">Noviembre</span>
+                    </div>
+                    <div class="h-12 w-px bg-earth-600"></div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-[#f59e0b] lang-pt">Ganesha Novos Recomeços</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#f59e0b] lang-en hidden">Ganesha New Beginnings</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#f59e0b] lang-es hidden">Ganesha Nuevos Comienzos</h4>
+                    </div>
+                </div>
+
+                <!-- Evento 5 -->
+                <div class="bg-earth-800 p-6 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors flex items-center gap-6 glowing-border">
+                    <div class="text-center min-w-[90px]">
+                        <span class="block text-4xl font-bold text-mystic-gold">12</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-pt">Dezembro</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-en hidden">December</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-es hidden">Diciembre</span>
+                    </div>
+                    <div class="h-12 w-px bg-earth-600"></div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-[#047857] lang-pt">Força de Oyá</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#047857] lang-en hidden">Strength of Oyá</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#047857] lang-es hidden">Fuerza de Oyá</h4>
+                    </div>
+                </div>
+
+                <!-- Evento 6 -->
+                <div class="bg-earth-800 p-6 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors flex items-center gap-6 glowing-border">
+                    <div class="text-center min-w-[90px]">
+                        <span class="block text-4xl font-bold text-mystic-gold">31</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-pt">Dezembro</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-en hidden">December</span>
+                        <span class="block text-sm text-earth-400 uppercase tracking-widest font-semibold lang-es hidden">Diciembre</span>
+                    </div>
+                    <div class="h-12 w-px bg-earth-600"></div>
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-[#e11d48] lang-pt">Unificação dos Povos Cerimônia de Reveillon</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#e11d48] lang-en hidden">Unification of Peoples New Year's Eve Ceremony</h4>
+                        <h4 class="font-serif text-xl font-bold text-[#e11d48] lang-es hidden">Unificación de los Pueblos Ceremonia de Año Nuevo</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Depoimentos Section -->
-    <section id="depoimentos" class="py-20 lg:py-28 bg-earth-900 relative overflow-hidden">
+    <section id="depoimentos" class="py-20 lg:py-28 bg-earth-800 relative overflow-hidden leaf-pattern">
         <!-- Decorational elements -->
         <div class="absolute top-0 left-0 w-64 h-64 bg-mystic-gold rounded-full mix-blend-overlay filter blur-[100px] opacity-10"></div>
         <div class="absolute bottom-0 right-0 w-64 h-64 bg-mystic-gold rounded-full mix-blend-overlay filter blur-[100px] opacity-10"></div>
         
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-16 text-earth-100">Vozes da Nossa Tribo</h3>
+            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-16 text-earth-100">
+                <span class="lang-pt">Vozes da Nossa Tribo</span><span class="lang-en hidden">Voices of Our Tribe</span><span class="lang-es hidden">Voces de Nuestra Tribu</span>
+            </h3>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Depoimento 1 -->
-                <div class="bg-earth-800 p-8 rounded-2xl relative">
+                <div class="bg-earth-900 p-8 rounded-2xl relative border border-earth-700">
                     <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-earth-700"></i>
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-earth-600 rounded-full flex items-center justify-center text-xl font-bold text-earth-100">MS</div>
@@ -269,11 +468,12 @@
                         </div>
                     </div>
                     <p class="text-earth-400 text-sm italic text-left relative z-10">
-                        "A experiência com a Nossa Tribo transformou minha visão de mundo. Encontrei respostas que buscava há anos na terapia tradicional. O cuidado dos guardiões durante toda a consagração me fez sentir em casa e segura para mergulhar nas minhas sombras."
+                        <span class="lang-pt">"A experiência com a Nossa Tribo transformou minha visão de mundo. Encontrei respostas que buscava há anos na terapia tradicional. O cuidado dos guardiões durante toda a consagração me fez sentir em casa e segura para mergulhar nas minhas sombras."</span>
+                        <span class="lang-en hidden">"The experience with Nossa Tribo transformed my worldview. I found answers I had been seeking for years in traditional therapy. The guardians' care throughout the consecration made me feel at home and safe to dive into my shadows."</span>
+                        <span class="lang-es hidden">"La experiencia con Nossa Tribo transformó mi visión del mundo. Encontré respuestas que había estado buscando durante años en la terapia tradicional. El cuidado de los guardianes durante toda la consagración me hizo sentir como en casa y segura para sumergirme en mis sombras."</span>
                     </p>
                 </div>
-                <!-- Depoimento 2 -->
-                <div class="bg-earth-800 p-8 rounded-2xl relative">
+                <div class="bg-earth-900 p-8 rounded-2xl relative border border-earth-700">
                     <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-earth-700"></i>
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-earth-600 rounded-full flex items-center justify-center text-xl font-bold text-earth-100">JP</div>
@@ -289,11 +489,12 @@
                         </div>
                     </div>
                     <p class="text-earth-400 text-sm italic text-left relative z-10">
-                        "Um espaço de muito respeito e amor. A música (os rezos) são lindos e conduzem a jornada de forma espetacular. Saí de lá com o coração leve e uma clareza mental que nunca havia experimentado."
+                        <span class="lang-pt">"Um espaço de muito respeito e amor. A música (os rezos) são lindos e conduzem a jornada de forma espetacular. Saí de lá com o coração leve e uma clareza mental que nunca havia experimentado."</span>
+                        <span class="lang-en hidden">"A space of much respect and love. The music (prayers) is beautiful and guides the journey spectacularly. I left there with a light heart and mental clarity I had never experienced."</span>
+                        <span class="lang-es hidden">"Un espacio de mucho respeto y amor. La música (rezos) es hermosa y guía el viaje de manera espectacular. Salí de allí con el corazón ligero y una claridad mental que nunca había experimentado."</span>
                     </p>
                 </div>
-                <!-- Depoimento 3 -->
-                <div class="bg-earth-800 p-8 rounded-2xl relative">
+                <div class="bg-earth-900 p-8 rounded-2xl relative border border-earth-700">
                     <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-earth-700"></i>
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-14 h-14 bg-earth-600 rounded-full flex items-center justify-center text-xl font-bold text-earth-100">AL</div>
@@ -309,7 +510,9 @@
                         </div>
                     </div>
                     <p class="text-earth-400 text-sm italic text-left relative z-10">
-                        "Foi a minha primeira consagração e eu estava muito nervosa. A paciência da equipe e o ambiente super acolhedor me acalmaram na hora. O chá me trouxe uma paz imensa e a certeza de que somos todos um. Gratidão eterna à egrégora!"
+                        <span class="lang-pt">"Foi a minha primeira consagração e eu estava muito nervosa. A paciência da equipe e o ambiente super acolhedor me acalmaram na hora. O chá me trouxe uma paz imensa e a certeza de que somos todos um. Gratidão eterna à egrégora!"</span>
+                        <span class="lang-en hidden">"It was my first consecration and I was very nervous. The team's patience and super welcoming environment calmed me immediately. The tea brought me immense peace and the certainty that we are all one. Eternal gratitude to the egregore!"</span>
+                        <span class="lang-es hidden">"Fue mi primera consagración y estaba muy nerviosa. La paciencia del equipo y el ambiente súper acogedor me calmaron de inmediato. El té me trajo una inmensa paz y la certeza de que todos somos uno. ¡Gratitud eterna a la egrégora!"</span>
                     </p>
                 </div>
             </div>
@@ -317,53 +520,69 @@
     </section>
 
     <!-- Contato e Endereço Section -->
-    <section id="contato" class="py-20 lg:py-28 bg-earth-800 leaf-pattern relative border-t border-earth-700">
+    <section id="contato" class="py-20 lg:py-28 bg-earth-900 relative border-t border-earth-700">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-earth-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-earth-700">
+            <div class="max-w-4xl mx-auto bg-earth-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-earth-700">
                 <!-- Info -->
-                <div class="md:w-1/2 p-10 bg-earth-900">
-                    <h3 class="font-serif text-3xl font-bold mb-2 text-earth-100">Venha nos Visitar</h3>
-                    <p class="text-earth-400 mb-8 text-sm">Sinta o chamado e entre em contato para agendar sua participação na próxima cerimônia.</p>
+                <div class="md:w-1/2 p-10 bg-earth-800">
+                    <h3 class="font-serif text-3xl font-bold mb-2 text-earth-100">
+                        <span class="lang-pt">Venha nos Visitar</span><span class="lang-en hidden">Come Visit Us</span><span class="lang-es hidden">Ven a Visitarnos</span>
+                    </h3>
+                    <p class="text-earth-400 mb-8 text-sm">
+                        <span class="lang-pt">Sinta o chamado e entre em contato para agendar sua participação na próxima cerimônia.</span>
+                        <span class="lang-en hidden">Feel the call and get in touch to schedule your participation in the next ceremony.</span>
+                        <span class="lang-es hidden">Siente la llamada y ponte en contacto para agendar tu participación en la próxima ceremonia.</span>
+                    </p>
                     
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-earth-800 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
+                            <div class="w-10 h-10 bg-earth-700 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-earth-100 text-sm">Endereço</h5>
-                                <p class="text-earth-400 text-sm">Duque de Caxias, Rio de Janeiro - RJ<br><span class="text-xs italic">(Endereço completo fornecido após triagem)</span></p>
+                                <h5 class="font-bold text-earth-100 text-sm">
+                                    <span class="lang-pt">Endereço</span><span class="lang-en hidden">Address</span><span class="lang-es hidden">Dirección</span>
+                                </h5>
+                                <p class="text-earth-400 text-sm">Duque de Caxias, Rio de Janeiro - RJ<br>
+                                    <span class="text-xs italic lang-pt">(Endereço completo fornecido após triagem)</span>
+                                    <span class="text-xs italic lang-en hidden">(Full address provided after screening)</span>
+                                    <span class="text-xs italic lang-es hidden">(Dirección completa proporcionada después del triaje)</span>
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-earth-800 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
-                                <i class="fa-solid fa-phone"></i>
+                            <div class="w-10 h-10 bg-earth-700 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-earth-100 text-sm">WhatsApp / Contato</h5>
-                                <a href="#" class="text-earth-400 text-sm hover:text-mystic-gold transition-colors">(21) 99999-9999</a>
+                                <h5 class="font-bold text-earth-100 text-sm">
+                                    <span class="lang-pt">WhatsApp / Contato</span><span class="lang-en hidden">WhatsApp / Contact</span><span class="lang-es hidden">WhatsApp / Contacto</span>
+                                </h5>
+                                <a href="https://wa.me/5521976653561" target="_blank" class="text-earth-400 text-sm hover:text-mystic-gold transition-colors">+55 (21) 97665-3561</a>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-earth-800 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
+                            <div class="w-10 h-10 bg-earth-700 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
                                 <i class="fa-regular fa-envelope"></i>
                             </div>
                             <div>
-                                <h5 class="font-bold text-earth-100 text-sm">E-mail</h5>
-                                <a href="#" class="text-earth-400 text-sm hover:text-mystic-gold transition-colors">contato@nossatribo.com.br</a>
+                                <h5 class="font-bold text-earth-100 text-sm">
+                                    <span class="lang-pt">E-mail</span><span class="lang-en hidden">E-mail</span><span class="lang-es hidden">Correo electrónico</span>
+                                </h5>
+                                <a href="mailto:contato@nossatribo.com.br" class="text-earth-400 text-sm hover:text-mystic-gold transition-colors">contato@nossatribo.com.br</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-10">
-                        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#128C7E] transition-colors w-full justify-center shadow-lg shadow-[#25D366]/20">
+                        <a href="https://wa.me/5521976653561" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#128C7E] transition-colors w-full justify-center shadow-lg shadow-[#25D366]/20">
                             <i class="fa-brands fa-whatsapp text-xl"></i>
-                            Falar no WhatsApp
+                            <span class="lang-pt">Falar no WhatsApp</span><span class="lang-en hidden">Talk on WhatsApp</span><span class="lang-es hidden">Hablar por WhatsApp</span>
                         </a>
                     </div>
                 </div>
                 <!-- Mapa/Imagem -->
-                <div class="md:w-1/2 min-h-[300px] relative bg-earth-800">
+                <div class="md:w-1/2 min-h-[300px] relative bg-earth-700">
                     <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=800&auto=format&fit=crop" alt="Natureza" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
                     <div class="absolute inset-0 bg-earth-900/40"></div>
                 </div>
@@ -374,23 +593,57 @@
     <!-- Footer -->
     <footer class="bg-earth-900 border-t border-earth-800 py-12 text-center md:text-left">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Logo - CORRIGIDO PARA .png -->
+            <!-- Logo -->
             <div class="flex items-center gap-3">
                 <img src="./imagens/logo.png" alt="Logo Nossa Tribo" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://placehold.co/100x100/2c221e/d97706?text=Tribo'">
                 <span class="font-serif text-xl text-mystic-gold font-bold tracking-widest">Nossa Tribo</span>
             </div>
             
             <p class="text-earth-500 text-sm">
-                &copy; 2026 Espaço Xamânico Nossa Tribo. Todos os direitos reservados.
+                &copy; 2026 
+                <span class="lang-pt">Espaço Xamânico Nossa Tribo. Todos os direitos reservados.</span>
+                <span class="lang-en hidden">Nossa Tribo Shamanic Space. All rights reserved.</span>
+                <span class="lang-es hidden">Espacio Chamánico Nossa Tribo. Todos los derechos reservados.</span>
             </p>
             
             <div class="flex gap-4 text-earth-400">
-                <a href="#" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://instagram.com/noss.atribo" target="_blank" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC6cdswx6CwkRnrRc3dHqRmg" target="_blank" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Script de Tradução Dinâmica -->
+    <script>
+        function setLanguage(lang) {
+            // Atualiza Lang no HTML
+            document.documentElement.lang = lang;
+
+            // Esconde todas as tags de linguagem
+            const allLangElements = document.querySelectorAll('.lang-pt, .lang-en, .lang-es');
+            allLangElements.forEach(el => el.classList.add('hidden'));
+
+            // Mostra apenas as da linguagem selecionada
+            const selectedLangElements = document.querySelectorAll('.lang-' + lang);
+            selectedLangElements.forEach(el => el.classList.remove('hidden'));
+
+            // Atualiza classe "active" nos botões de ambos os menus
+            const btnIds = ['desk', 'mob'];
+            const langs = ['pt', 'en', 'es'];
+
+            btnIds.forEach(type => {
+                langs.forEach(l => {
+                    const btn = document.getElementById(`btn-${l}-${type}`);
+                    if(btn) {
+                        if(l === lang) {
+                            btn.classList.add('active');
+                        } else {
+                            btn.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
