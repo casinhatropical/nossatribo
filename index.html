@@ -1,62 +1,396 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nossa Tribo</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #243047;
-      background: #f7f8fc;
-    }
-    header {
-      padding: 22px 8%;
-      background: white;
-      font-weight: bold;
-    }
-    main {
-      text-align: center;
-      padding: 90px 20px;
-      background: #e7efff;
-    }
-    h1 { font-size: 42px; }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .botao {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 24px;
-      border-radius: 8px;
-      color: white;
-      background: #2457d6;
-      text-decoration: none;
-    }
-    footer {
-      padding: 25px;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 32px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Tribo - Sagrada Medicina</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Lora (Serif for mystic feel) and Inter (Sans for readability) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config for Earthy Tones -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    },
+                    colors: {
+                        earth: {
+                            900: '#1c1614', /* Very dark brown/black */
+                            800: '#2c221e', /* Dark brown */
+                            700: '#3a2e28', /* Medium dark brown */
+                            600: '#5c483a', /* Medium brown */
+                            500: '#8c6b52', /* Light brown / terracotta */
+                            400: '#b89270', /* Sand */
+                            100: '#f5efe6', /* Off-white / cream */
+                        },
+                        mystic: {
+                            gold: '#d97706', /* Amber 600 */
+                            light: '#fbbf24', /* Amber 400 */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for mystical vibe */
+        body {
+            background-color: #1c1614;
+            color: #f5efe6;
+        }
+        .glowing-border {
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .glowing-border:hover {
+            box-shadow: 0 0 25px rgba(217, 119, 6, 0.3);
+        }
+        .leaf-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M54.627 0l.83.83-26.98 26.98-2.618-2.617L52.84.212l1.787-.212zM28.02 33.254l-2.618-2.617 26.98-26.98.83.83-25.192 28.767zM31.98 26.746l2.618 2.617-26.98 26.98-.83-.83 25.192-28.767zM5.373 60l-.83-.83 26.98-26.98 2.618 2.617L7.16 59.788l-1.787.212z" fill="%233a2e28" fill-opacity="0.1" fill-rule="evenodd"/></svg>');
+        }
+    </style>
 </head>
-<body>
-  <header>Nossa Tribo</header>
+<body class="antialiased font-sans text-earth-100 selection:bg-mystic-gold selection:text-earth-900">
 
-  <main>
-    <h1>Boas vindas!</h1>
-    <p>Conheça um pouco sobre nossa missão</p>
-    <a class="botao"
-       href="https://wa.me/5521976653561">
-       Fale conosco pelo WhatsApp
-    </a>
-  </main>
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 bg-earth-900 bg-opacity-90 backdrop-blur-md border-b border-earth-700 transition-all duration-300 shadow-lg">
+        <div class="container mx-auto px-4 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Logo Section - CORRIGIDO PARA .png -->
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="w-14 h-14 rounded-full bg-earth-800 flex items-center justify-center p-1 border border-earth-600 group-hover:border-mystic-gold transition-colors overflow-hidden glowing-border">
+                    <img src="./imagens/logo.png" alt="Logo Nossa Tribo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/150x150/2c221e/d97706?text=Tribo'">
+                </div>
+                <div>
+                    <h1 class="font-serif text-2xl lg:text-3xl text-mystic-gold font-bold tracking-wider group-hover:text-mystic-light transition-colors">Nossa Tribo</h1>
+                    <p class="text-xs text-earth-400 tracking-[0.2em] uppercase">Centro Xamânico</p>
+                </div>
+            </a>
 
-  <footer>© 2026 Nossa Tribo</footer>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex gap-8 items-center font-medium text-sm tracking-wide">
+                <a href="#egregora" class="hover:text-mystic-gold transition-colors">A Egrégora</a>
+                <a href="#ayahuasca" class="hover:text-mystic-gold transition-colors">A Medicina</a>
+                <a href="#preparos" class="hover:text-mystic-gold transition-colors">Preparos</a>
+                <a href="#depoimentos" class="hover:text-mystic-gold transition-colors">Depoimentos</a>
+                <a href="#contato" class="px-6 py-2 bg-mystic-gold text-earth-900 rounded-full hover:bg-mystic-light transition-colors font-bold shadow-lg shadow-mystic-gold/20">Contato</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-earth-100 hover:text-mystic-gold transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-52 lg:pb-40 bg-earth-900 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2000&auto=format&fit=crop" alt="Floresta Mística" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-earth-900/80 via-earth-900/60 to-earth-900"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center flex flex-col items-center">
+            <i class="fa-brands fa-pagelines text-5xl text-mystic-gold mb-6 animate-pulse"></i>
+            <h2 class="font-serif text-4xl lg:text-6xl font-bold text-earth-100 mb-6 leading-tight max-w-4xl shadow-black drop-shadow-lg">
+                Desperte sua Consciência e Encontre sua <span class="text-mystic-gold">Cura Interior</span>
+            </h2>
+            <p class="text-lg lg:text-xl text-earth-400 mb-10 max-w-2xl font-light leading-relaxed">
+                Venha vivenciar a sagrada medicina da floresta em um ambiente de luz, respeito, acolhimento e muito amor. Sinta o chamado.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#preparos" class="px-8 py-4 bg-mystic-gold text-earth-900 rounded-full font-bold hover:bg-mystic-light transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(217,119,6,0.4)]">
+                    Como se Preparar
+                </a>
+                <a href="#contato" class="px-8 py-4 bg-transparent border-2 border-earth-600 text-earth-100 rounded-full font-bold hover:border-mystic-gold hover:text-mystic-gold transition-all">
+                    Agendar Cerimônia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Egrégora Section -->
+    <section id="egregora" class="py-20 lg:py-28 bg-earth-800 leaf-pattern relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="lg:w-1/2">
+                    <div class="relative glowing-border rounded-2xl p-2 bg-earth-700">
+                        <!-- Imagem da Egrégora com path original -->
+                        <img src="./imagens/egregora-1.jpeg" alt="Nossa Egrégora" class="w-full h-auto rounded-xl object-cover shadow-2xl" onerror="this.src='https://placehold.co/800x600/3a2e28/d97706?text=Foto+da+Egr%C3%A9gora'">
+                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-mystic-gold rounded-full flex items-center justify-center shadow-lg border-4 border-earth-800 hidden md:flex">
+                            <i class="fa-solid fa-hands-holding-circle text-4xl text-earth-900"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-left">
+                    <div class="inline-block px-3 py-1 bg-earth-700 text-mystic-gold text-xs font-bold tracking-widest uppercase rounded-full mb-4">
+                        Nossa Família
+                    </div>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-6 text-earth-100">Uma Egrégora de Luz e Acolhimento</h3>
+                    <p class="text-earth-400 mb-6 text-lg leading-relaxed">
+                        A <strong class="text-mystic-light font-normal">Nossa Tribo</strong> nasceu do chamado ancestral para ancorar a luz e o amor através das medicinas da floresta. Somos uma família espiritual dedicada ao despertar da consciência, cura emocional e evolução do ser.
+                    </p>
+                    <p class="text-earth-400 mb-8 text-lg leading-relaxed">
+                        Nossas cerimônias são conduzidas com extrema responsabilidade, respeito às tradições xamânicas e profundo cuidado com cada participante, garantindo um espaço seguro para sua jornada interior.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-check text-mystic-gold mt-1"></i>
+                            <span class="text-earth-100">Espaço seguro e guardiões experientes.</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-check text-mystic-gold mt-1"></i>
+                            <span class="text-earth-100">Cânticos, rezas e instrumentos de cura (Ícaros e Músicas de Rezo).</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fa-solid fa-check text-mystic-gold mt-1"></i>
+                            <span class="text-earth-100">Acompanhamento e integração pós-cerimônia.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ayahuasca Section -->
+    <section id="ayahuasca" class="py-20 lg:py-28 bg-earth-900 relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+                <div class="lg:w-1/2">
+                    <div class="relative glowing-border rounded-2xl p-2 bg-earth-800">
+                        <!-- Imagem da Cerimônia com path original -->
+                        <img src="./imagens/cerimonia-1.jpeg" alt="Cerimônia de Ayahuasca" class="w-full h-auto rounded-xl object-cover shadow-2xl" onerror="this.src='https://placehold.co/800x600/2c221e/d97706?text=Foto+da+Cerim%C3%B4nia'">
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-left">
+                    <div class="inline-block px-3 py-1 bg-earth-800 text-mystic-gold text-xs font-bold tracking-widest uppercase rounded-full mb-4">
+                        A Medicina Sagrada
+                    </div>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-6 text-earth-100">A Força da Ayahuasca</h3>
+                    <p class="text-earth-400 mb-6 text-lg leading-relaxed">
+                        A Ayahuasca (também conhecida como Nixi Pae, Daime ou Vegetal) é um chá sacramental de origem amazônica, feito da união do cipó Mariri (Jagube) e das folhas da Chacrona (Rainha).
+                    </p>
+                    <p class="text-earth-400 mb-6 text-lg leading-relaxed">
+                        Considerada uma "medicina da alma", ela atua como um expansor de consciência, permitindo acessar memórias profundas, ressignificar traumas, curar feridas emocionais e proporcionar um encontro verdadeiro com sua essência divina.
+                    </p>
+                    <div class="bg-earth-800 p-6 rounded-xl border-l-4 border-mystic-gold">
+                        <i class="fa-solid fa-quote-left text-2xl text-earth-600 mb-2"></i>
+                        <p class="italic text-earth-100 text-sm">
+                            "A medicina não te mostra o que você quer ver, ela te mostra o que você precisa curar para ser livre."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparos / Dieta Section -->
+    <section id="preparos" class="py-20 lg:py-28 bg-earth-800 leaf-pattern">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-4 text-earth-100">Preparos para a Cerimônia</h3>
+            <p class="text-earth-400 max-w-2xl mx-auto mb-16 text-lg">
+                Para receber a medicina com reverência e facilitar o processo de limpeza (física e espiritual), pedimos que realize a dieta nos <strong class="text-mystic-gold">3 dias que antecedem</strong> o ritual.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-earth-900 p-8 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors glowing-border group">
+                    <div class="w-16 h-16 bg-earth-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-mystic-gold transition-colors">
+                        <i class="fa-solid fa-drumstick-bite text-2xl text-mystic-gold group-hover:text-earth-900 transition-colors"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">Alimentação</h4>
+                    <p class="text-earth-400 text-sm">
+                        Evite carne vermelha e de porco. Dê preferência a alimentos leves, frutas, legumes, grãos e muita água. Evite excesso de sal, açúcar, frituras e temperos fortes.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-earth-900 p-8 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors glowing-border group">
+                    <div class="w-16 h-16 bg-earth-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-mystic-gold transition-colors">
+                        <i class="fa-solid fa-wine-glass-empty text-2xl text-mystic-gold group-hover:text-earth-900 transition-colors"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">Substâncias</h4>
+                    <p class="text-earth-400 text-sm">
+                        É rigorosamente proibido o uso de bebidas alcoólicas, drogas ilícitas (maconha, cocaína, sintéticos, etc.) e medicações contra-indicadas.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-earth-900 p-8 rounded-2xl border border-earth-700 hover:border-mystic-gold transition-colors glowing-border group">
+                    <div class="w-16 h-16 bg-earth-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-mystic-gold transition-colors">
+                        <i class="fa-solid fa-bed text-2xl text-mystic-gold group-hover:text-earth-900 transition-colors"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold mb-4 text-earth-100">Energia e Corpo</h4>
+                    <p class="text-earth-400 text-sm">
+                        Mantenha abstinência sexual (incluindo masturbação) para preservar sua energia vital. Busque repousar a mente, evite discussões e conteúdos pesados na TV/internet.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 inline-block bg-mystic-gold/10 text-mystic-light border border-mystic-gold/30 px-6 py-3 rounded-lg text-sm">
+                <i class="fa-solid fa-circle-exclamation mr-2"></i> <strong>Atenção:</strong> Pessoas que fazem uso de antidepressivos (inibidores de MAO ou recaptação de serotonina) ou têm histórico de transtornos psiquiátricos severos devem nos informar <strong>obrigatoriamente</strong> antes.
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-20 lg:py-28 bg-earth-900 relative overflow-hidden">
+        <!-- Decorational elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-mystic-gold rounded-full mix-blend-overlay filter blur-[100px] opacity-10"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-mystic-gold rounded-full mix-blend-overlay filter blur-[100px] opacity-10"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h3 class="font-serif text-3xl lg:text-4xl font-bold mb-16 text-earth-100">Vozes da Nossa Tribo</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-earth-800 p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-earth-700"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-earth-600 rounded-full flex items-center justify-center text-xl font-bold text-earth-100">MS</div>
+                        <div class="text-left">
+                            <h5 class="font-bold text-mystic-light">Maria Silva</h5>
+                            <span class="text-xs text-earth-400 flex items-center gap-1">
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-earth-400 text-sm italic text-left relative z-10">
+                        "A experiência com a Nossa Tribo transformou minha visão de mundo. Encontrei respostas que buscava há anos na terapia tradicional. O cuidado dos guardiões durante toda a consagração me fez sentir em casa e segura para mergulhar nas minhas sombras."
+                    </p>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-earth-800 p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-earth-700"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-earth-600 rounded-full flex items-center justify-center text-xl font-bold text-earth-100">JP</div>
+                        <div class="text-left">
+                            <h5 class="font-bold text-mystic-light">João Pedro</h5>
+                            <span class="text-xs text-earth-400 flex items-center gap-1">
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-earth-400 text-sm italic text-left relative z-10">
+                        "Um espaço de muito respeito e amor. A música (os rezos) são lindos e conduzem a jornada de forma espetacular. Saí de lá com o coração leve e uma clareza mental que nunca havia experimentado."
+                    </p>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="bg-earth-800 p-8 rounded-2xl relative">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-4xl text-earth-700"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-earth-600 rounded-full flex items-center justify-center text-xl font-bold text-earth-100">AL</div>
+                        <div class="text-left">
+                            <h5 class="font-bold text-mystic-light">Ana Luiza</h5>
+                            <span class="text-xs text-earth-400 flex items-center gap-1">
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                                <i class="fa-solid fa-star text-mystic-gold"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-earth-400 text-sm italic text-left relative z-10">
+                        "Foi a minha primeira consagração e eu estava muito nervosa. A paciência da equipe e o ambiente super acolhedor me acalmaram na hora. O chá me trouxe uma paz imensa e a certeza de que somos todos um. Gratidão eterna à egrégora!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Endereço Section -->
+    <section id="contato" class="py-20 lg:py-28 bg-earth-800 leaf-pattern relative border-t border-earth-700">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-earth-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-earth-700">
+                <!-- Info -->
+                <div class="md:w-1/2 p-10 bg-earth-900">
+                    <h3 class="font-serif text-3xl font-bold mb-2 text-earth-100">Venha nos Visitar</h3>
+                    <p class="text-earth-400 mb-8 text-sm">Sinta o chamado e entre em contato para agendar sua participação na próxima cerimônia.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-earth-800 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-earth-100 text-sm">Endereço</h5>
+                                <p class="text-earth-400 text-sm">Duque de Caxias, Rio de Janeiro - RJ<br><span class="text-xs italic">(Endereço completo fornecido após triagem)</span></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-earth-800 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-earth-100 text-sm">WhatsApp / Contato</h5>
+                                <a href="#" class="text-earth-400 text-sm hover:text-mystic-gold transition-colors">(21) 99999-9999</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-earth-800 rounded-full flex items-center justify-center text-mystic-gold shrink-0">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-earth-100 text-sm">E-mail</h5>
+                                <a href="#" class="text-earth-400 text-sm hover:text-mystic-gold transition-colors">contato@nossatribo.com.br</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#128C7E] transition-colors w-full justify-center shadow-lg shadow-[#25D366]/20">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Falar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Mapa/Imagem -->
+                <div class="md:w-1/2 min-h-[300px] relative bg-earth-800">
+                    <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=800&auto=format&fit=crop" alt="Natureza" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700">
+                    <div class="absolute inset-0 bg-earth-900/40"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-earth-900 border-t border-earth-800 py-12 text-center md:text-left">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Logo - CORRIGIDO PARA .png -->
+            <div class="flex items-center gap-3">
+                <img src="./imagens/logo.png" alt="Logo Nossa Tribo" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://placehold.co/100x100/2c221e/d97706?text=Tribo'">
+                <span class="font-serif text-xl text-mystic-gold font-bold tracking-widest">Nossa Tribo</span>
+            </div>
+            
+            <p class="text-earth-500 text-sm">
+                &copy; 2026 Espaço Xamânico Nossa Tribo. Todos os direitos reservados.
+            </p>
+            
+            <div class="flex gap-4 text-earth-400">
+                <a href="#" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-mystic-gold transition-colors text-xl"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
